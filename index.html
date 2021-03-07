@@ -7,5 +7,38 @@
 </head>
 <body>
     <div id="app"></div>
+    <script>
+        console.log('我是module中的')
+        function fn(){
+            console.log('test')
+        }
+        function threeUse(fn){
+            let num = 0;
+            let useFn = function(){
+                num++;
+                if(num>3){
+                    console.log('error')
+                    return
+                }
+                fn()
+            }
+            
+            return useFn
+        }
+        var tu = new threeUse(fn);
+        tu()
+        tu()
+        tu()
+        tu()
+    </script>
+    <script type="module" src="./jsApi/Array.js"></script>
+    <script type="module" src="./jsApi/Object.js"></script>
+    <script>
+        let notmodule = "hello, this is a normal param."
+        setTimeout(()=>{
+            console.log('timer')
+        }, 0)
+    </script>
+    <script src="./jsApi/module.js"></script>
 </body>
 </html>
