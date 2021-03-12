@@ -1,0 +1,25 @@
+/* ----------- CSS -------------- */
+@import '@/assets/pikaday.css';
+ul li:nth-child(odd){
+    color: rgb(226, 26, 69);
+    list-style-type: none;
+}
+.cat{
+    background: url('@/assets/imgs/cat.jpg') no-repeat center;
+    width: 100px;
+    height: 100px;
+}
+.panel-body{
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+.show-panel{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rebeccapurple;
+    padding: 10px;
+    background-color: antiquewhite;
+    text-align: center;
+    vertical-align: top;
+}
