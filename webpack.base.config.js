@@ -1,52 +1,66 @@
-const { Hash } = require('crypto');
-const path = require('path');
+const path = require("path");
+const { VueLoaderPlugin } = require("vue-loader");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//https://stylelint.io/user-guide/configure
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+
 module.exports = {
-  //context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  context: path.resolve(__dirname, "src"),
+  entry: {
+    app: "./index.js"
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "[name][contenthash:8].bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: "vue-loader"
+          }
+        ]
+      },
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
+        options: { appendTsSuffixTo: [/\.vue$/] }
+      },
+      {
         test: /\.js$/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
               cacheDirectory: true
             }
           }
         ],
         exclude: /node_modules/,
-        include: path.resolve(__dirname, 'src')
+        include: path.resolve(__dirname, "src")
       },
       {
         test: /\.css$/,
         use: [
           {
-            //把解析后的css插入到<header>中
-            loader: 'style-loader'
+            loader: MiniCssExtractPlugin.loader
           },
-          {
-            //解析.css文件
-            loader: 'css-loader'
-          },
-          
+          "css-loader"
         ]
       },
       {
         test: /\.less$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: "style-loader"
           },
           {
-            loader: 'css-loader'
+            loader: "css-loader"
           },
           {
-            loader: 'less-loader'
+            loader: "less-loader"
           }
         ]
       },
@@ -54,30 +68,30 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: 'css-loader'
+            loader: "css-loader"
           },
           {
-            loader: 'sass-loader'
+            loader: "sass-loader"
           }
         ]
       },
       {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
-        use: [              
+        test: /\.(jpg|jpeg|png|gif|svg|woff|svg|eot|ttf)$/,
+        use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
-              limit: 28*1024,
+              limit: 28 * 1024,
               fallback: {
-                loader: 'file-loader',
+                loader: "file-loader",
                 options: {
-                  name: '[name]=[hash:8].[ext]',
+                  name: "[name]=[hash:8].[ext]",
                   //publicPath: './assets',
-                  outputPath: 'assets'
-                }              
+                  outputPath: "assets"
+                }
               }
             }
           }
@@ -85,9 +99,16 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "common.css"
+    }),
+    new VueLoaderPlugin(),
+  ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
+      "@": path.resolve(__dirname, "src"),
+    },
+    extensions: [".js", ".vue", ".ts"]
   }
 };

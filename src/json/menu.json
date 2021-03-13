@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "text": "买币",
+        "more": false
+    },
+    {
+        "id": 2,
+        "text": "行情",
+        "more": true
+    },
+    {
+        "id": 3,
+        "text": "更多",
+        "more": true
+    }
+]
