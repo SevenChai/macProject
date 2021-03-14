@@ -1,3 +1,4 @@
+$web-orange-color: #de596b;
 html,
 body,
 .ant-btn,
@@ -23,37 +24,21 @@ img{
 .text-center {
   text-align: center;
 }
+.anticon{
+  font-size: 14px;
+}
+.anticon, .ant-btn{
+  vertical-align: middle;
+}
+.big-icon, .big-icon .anticon{
+  font-size: 20px;
+}
+.web-orange-color, .web-orange-color input{
+  color: $web-orange-color;
+}
+
 /* ------------ header ------------ */
-#header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  box-sizing: content-box;
-}
-#header .logo {
-  width: 120px;
-  height: 31px;
-  line-height: 31px;
-  margin: 16px 24px 16px 0;
-  float: left;
-}
-#header .ant-menu-horizontal {
-  line-height: 64px;
-}
-#header .left-panel{
-  display: inline-block;
-  float: left;
-}
-#header .right-panel {
-  display: inline-block;
-  float: right;
-}
-#header .right-panel > span, #header .left-panel > span {
-  display: inline-block;
-  padding: 0px 10px;
-  margin: 0px 10px;
-}
+
 
 /* ------------ content ------------ */
 #slogan {
@@ -75,7 +60,7 @@ img{
 }
 .ant-carousel .slick-prev,
 .ant-carousel .slick-next {
-  background-color: red;
+  background-color: $web-orange-color;
 }
 #homeBg {
   width: 100%;

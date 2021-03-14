@@ -17,7 +17,7 @@ const config = merge(baseconfig, {
       "/api": {
         target: "http://localhost:3000/src/json",
         pathRewrite: { "^/api": "" }
-      }
+      },
     }
   }
 });

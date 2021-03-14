@@ -29,6 +29,19 @@
     ## data更改
         vm.$data 可以增加，删除，更改属性值，但是直接通过vm.$data['prop'] = "newProp"会出项错误，并且不会被直接渲染到DOM中。 
     ## ref: 访问子组件实例或者子元素
+    ## i18n
+        使用
+        ```
+        // 在template中的使用方式: 
+        <span>{{$t('message.greeting')}}</span>
+
+        // 在script脚本中的使用方式:
+        this.$t('message.greeting')
+        ```
+        切换
+        ```
+        this.$i18n.locale = ‘en’；
+        ```
                     
 
     

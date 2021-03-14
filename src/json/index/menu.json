@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "text": "买币",
+        "more": false
+    },
+    {
+        "id": 2,
+        "text": "行情",
+        "more": false
+    },
+    {
+        "id": 3,
+        "text": "更多",
+        "more": true,
+        "children": [
+            {
+                "name": "others",
+                "data": [
+                    {
+                        "icon": "",
+                        "title": "关于GT"
+                    },
+                    {
+                        "icon": "",
+                        "title": "关于USDG（稳定币）"
+                    },
+                    {
+                        "icon": "",
+                        "title": "Startup首发"
+                    }
+                ]
+            },
+            {
+                "name": "server",
+                "data": [
+                    {
+                        "icon": "",
+                        "title": "公告中心"
+                    },
+                    {
+                        "icon": "",
+                        "title": "比特币减半"
+                    },
+                    {
+                        "icon": "",
+                        "title": "上币申请"
+                    }
+                ]
+            },
+            {
+                "name": "help",
+                "data": [
+                    {
+                        "icon": "",
+                        "title": "帮助中心"
+                    },
+                    {
+                        "icon": "",
+                        "title": "比特百科"
+                    },
+                    {
+                        "icon": "",
+                        "title": "建议反馈"
+                    }
+                ]
+            }
+        ]
+    }
+]
