@@ -19,9 +19,8 @@ export default {
     },
     watch: {
         data(newValue, oldValue) {
-            console.log('inner监听到了新数据', newValue.data)
-            //this.title = newValue.title || ""
-            //this.markets = newValue.data || []
+            this.title = newValue.title || ""
+            this.markets = newValue.data || []
         }
     },
     data() {
@@ -79,17 +78,12 @@ export default {
     beforeDestroy() {
         console.log('---------- inner market-tabel beforeDestroy ----------');
     },
-    activated(){
-        this.$emit('deactiveEve', "table-active")
-        console.log('---------- inner market-tabel activated ----------');
-    },
     deactivated(){
         this.$emit('deactiveEve', "table-deactive")
         console.log('---------- inner market-tabel deactivated ----------');
     },
     methods: {
         rowKey: record => {
-            console.log('recored: ', record.name, record.key)
             return record.name+record.key
         }
     },

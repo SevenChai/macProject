@@ -2,19 +2,23 @@ console.log("========index.js==========");
 import Vue from "vue";
 import Antd from 'ant-design-vue';
 import VueI18n from 'vue-i18n'
+import VueRouter from 'vue-router'
 import 'ant-design-vue/dist/antd.css';
 import '@/assets/layout.scss';
 import App from '@/App.vue';
 import http from '@/assets/js/utils'
 //webpack config test
 // import "@/assets/fonts.css";
-// import "@/loaders/test.css";
-// import "@/loaders/test.less";
-// import "@/loaders/test.scss";
+// import "@/demo-loaders/test.css";
+// import "@/demo-loaders/test.less";
+// import "@/demoloaders/test.scss";
 
 //antd
 Vue.config.productionTip = false;
 Vue.use(Antd);
+
+//router
+Vue.use(VueRouter)
 
 //http
 Vue.prototype.$http = http;
