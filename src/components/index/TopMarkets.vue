@@ -49,8 +49,3 @@ export default {
 <style lang="scss" scoped>
 
 </style>
-<style >
-#homeBg{
-    display: none!important;
-}
-</style>

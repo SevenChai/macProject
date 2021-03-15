@@ -1,16 +1,16 @@
 console.log("========index.js==========");
 import Vue from "vue";
-import Antd from "ant-design-vue";
-import "ant-design-vue/dist/antd.css";
-import "@/assets/layout.css";
+import Antd from 'ant-design-vue';
+import VueI18n from 'vue-i18n'
+import 'ant-design-vue/dist/antd.css';
+import '@/assets/layout.scss';
+import App from '@/App.vue';
+import http from '@/assets/js/utils'
 //webpack config test
 // import "@/assets/fonts.css";
 // import "@/loaders/test.css";
 // import "@/loaders/test.less";
 // import "@/loaders/test.scss";
-
-import App from "@/App.vue";
-import http from "@/assets/js/utils";
 
 //antd
 Vue.config.productionTip = false;
@@ -19,7 +19,19 @@ Vue.use(Antd);
 //http
 Vue.prototype.$http = http;
 
+
+//i18n
+Vue.use(VueI18n);
+const i18n = new VueI18n({
+locale: 'zh', // 定义默认语言为中文 
+messages: {
+    'zh': require('@/assets/languages/zh.json'),
+    'en': require('@/assets/languages/en.json')
+}
+})
+
 let vm = new Vue({
+  i18n,
   el: "#app",
   render: h => h(App)
 });

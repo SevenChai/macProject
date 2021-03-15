@@ -1,0 +1,19 @@
+{
+    "message": {
+        "greeting": "hello"
+    },
+    "indexPage": {
+        "spend": "spend",
+        "buy": "buy",
+        "notice": "notice",
+        "more": "more",
+        "spot": "spot",
+        "contract": "contract",
+        "currency": "legal currency",
+        "loan": "loan",
+        "newcur": "new currency",
+        "uplist": "up list",
+        "godlist": "god list"
+
+    }
+}

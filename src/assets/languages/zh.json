@@ -1,0 +1,19 @@
+{
+    "message": {
+        "greeting": "你好"
+    },
+    "indexPage": {
+        "spend": "花费",
+        "buy": "一键购买",
+        "notice": "公告",
+        "more": "更多",
+        "spot": "现货",
+        "contract": "合约",
+        "currency": "法币",
+        "loan": "借贷",
+        "newcur": "新币",
+        "uplist": "涨幅榜",
+        "godlist": "大神榜"
+
+    }
+}

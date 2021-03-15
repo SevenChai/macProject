@@ -1,0 +1,1 @@
+var arrmodule = 'seven"s module'
