@@ -2,42 +2,42 @@
     {
       "id": 1,
       "text": "现货",
-      "url": ""
+      "url": "/api/markets.json"
     },
     {
       "id": 2,
       "text": "ETF",
-      "url": ""
+      "url": "/api/markets/mar1.json"
     },
     {
       "id": 3,
       "text": "合约",
-      "url": ""
+      "url": "/api/markets/mar2.json"
     },
     {
       "id": 4,
       "text": "法币",
-      "url": ""
+      "url": "/api/newCur.json"
     },
     {
       "id": 5,
       "text": "借贷",
-      "url": ""
+      "url": "/api/newCur.json"
     },
     {
       "id": 6,
       "text": "新币",
-      "url": ""
+      "url": "/api/newCur.json"
     },
     {
       "id": 7,
       "text": "涨幅榜",
-      "url": ""
+      "url": "/api/newCur.json"
     },
     {
       "id": 8,
       "text": "大神榜",
-      "url": ""
+      "url": "/api/markets.json"
     }
   ]
   
