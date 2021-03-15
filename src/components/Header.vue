@@ -61,5 +61,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+/* ------------ Header.vue ------------ */
+#header{
+    color: red;
+}
 </style>

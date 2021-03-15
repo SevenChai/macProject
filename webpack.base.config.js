@@ -2,7 +2,7 @@ const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //https://stylelint.io/user-guide/configure
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -10,7 +10,7 @@ module.exports = {
     app: "./index.js"
   },
   output: {
-    filename: "[name][contenthash:8].bundle.js",
+    filename: "[name].[contenthash:8].js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
@@ -42,12 +42,15 @@ module.exports = {
         include: path.resolve(__dirname, "src")
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
-          "css-loader"
+          { loader: "css-loader" },
+          {
+            loader: "sass-loader"
+          }
         ]
       },
       {
@@ -65,21 +68,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: "sass-loader"
-          }
-        ]
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif|svg|woff|svg|eot|ttf)$/,
+        test: /\.(jpg|jpeg|png|gif|svg)$/,
         use: [
           {
             loader: "url-loader",
@@ -88,26 +77,32 @@ module.exports = {
               fallback: {
                 loader: "file-loader",
                 options: {
-                  name: "[name]=[hash:8].[ext]",
-                  //publicPath: './assets',
+                  name: "[name][hash:8].[ext]",
+                  //publicPath: '/assets/', //无效
                   outputPath: "assets"
                 }
               }
             }
           }
-        ]
+        ],
+        type: 'javascript/auto'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource"
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "common.css"
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     }),
-    new VueLoaderPlugin(),
+    new VueLoaderPlugin()
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "src")
     },
     extensions: [".js", ".vue", ".ts"]
   }

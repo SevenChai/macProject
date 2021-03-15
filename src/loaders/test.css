@@ -1,0 +1,22 @@
+/* ------------ test css ------------ */
+.test {
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  animation: move 0.5s infinite;
+}
+@keyframes move {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: green;
+  }
+}
+.test-img{
+  /*background: url('../assets/imgs/rabbit.jpg') no-repeat center;*/
+  background: url('~@/assets/imgs/rabbit.jpg') no-repeat center;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+}

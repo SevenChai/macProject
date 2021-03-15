@@ -9,12 +9,9 @@
     </h2>
     <a-row :gutter="16">
         <a-col :span="6" v-for="fea in features" :key="fea.id">
-            <a-card hoverable>
-                <div class="feature-box"></div>
-                <a-card-meta :title="fea.title">
-                    <template slot="description">{{ fea.desc }}</template>
-                </a-card-meta>
-            </a-card>
+            <div class="feature-box"></div>
+            <p class="title"></p>
+            <p>{{ fea.desc }}</p>
         </a-col>
     </a-row>
 </section>

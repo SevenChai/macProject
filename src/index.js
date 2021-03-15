@@ -1,10 +1,16 @@
 console.log("========index.js==========");
 import Vue from "vue";
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
-import '@/assets/layout.css';
-import App from '@/App.vue';
-import http from '@/assets/js/utils'
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
+import "@/assets/layout.css";
+//webpack config test
+// import "@/assets/fonts.css";
+// import "@/loaders/test.css";
+// import "@/loaders/test.less";
+// import "@/loaders/test.scss";
+
+import App from "@/App.vue";
+import http from "@/assets/js/utils";
 
 //antd
 Vue.config.productionTip = false;
@@ -12,7 +18,6 @@ Vue.use(Antd);
 
 //http
 Vue.prototype.$http = http;
-
 
 let vm = new Vue({
   el: "#app",
