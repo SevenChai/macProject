@@ -118,6 +118,7 @@ export default {
       scrollEle: "",
       continueScroll: true,
       isShowAction: false,
+      timer: null,
     };
   },
   created() {
@@ -152,14 +153,14 @@ export default {
     beginScroll(num = 0) {
       if (this.continueScroll) {
         let translateX = num || this.translateX;
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
           if (Math.abs(translateX) >= this.dbScrollWid - this.scrollNotice) {
             translateX = 0;
           }
-          translateX -= 2;
+          translateX -= 1;
           this.scrollEle.style.transform = "translateX(" + translateX + "px)";
           this.beginScroll(translateX);
-        }, 100);
+        }, 50);
       } else {
         this.translateX = num;
       }
@@ -203,6 +204,8 @@ export default {
     },
   },
   beforeDestroy() {
+    clearTimeout(this.timer)
+    this.timer = null;
     this.continueScroll = false;
     //this.beginScroll = null;
 
