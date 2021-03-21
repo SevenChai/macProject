@@ -2,7 +2,8 @@
   <a-config-provider :locale="locale">
     <a-layout>
       <Header @changeLocale="changeLocal"></Header>
-      <Content></Content>
+      <router-view></router-view>
+      <!-- <Content></Content> -->
       <Footer></Footer>
     </a-layout>
   </a-config-provider>
@@ -10,14 +11,12 @@
 
 <script>
 import Header from "@/components/Header";
-import Content from "@/components/Content";
 import Footer from "@/components/Footer";
 //国际化
 import zhCN from "ant-design-vue/es/locale-provider/zh_CN";
 export default {
   components: {
     Header,
-    Content,
     Footer,
   },
   data() {

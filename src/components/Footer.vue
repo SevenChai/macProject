@@ -49,6 +49,8 @@ export default {
     },
     methods: {
         async getFooterData() {
+            //https://www.gateio.tv/json_svr/query/?u=302&c=617136
+            //循环得到数据
             let data = await this.$http('api/footer.json', {})
             this.footData = data
         }

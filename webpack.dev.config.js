@@ -18,6 +18,12 @@ const config = merge(baseconfig, {
         target: "http://localhost:3000/src/json",
         pathRewrite: { "^/api": "" }
       },
+      "/gate": {
+        target: "https://www.gateio.tv/json_svr",
+        secure: false,
+        pathRewrite: { "^/gate": "" },
+        changeOrigin: true,
+      }
     }
   }
 });

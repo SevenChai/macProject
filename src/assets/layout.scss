@@ -1,9 +1,11 @@
 $web-orange-color: #de596b;
+$high-color: rgba(226, 45, 99, 0.2);
+$low-color: #007980;
 html,
 body,
 .ant-btn,
 .ant-table,
-.ant-menu{
+.ant-menu {
   font-size: 16px;
 }
 html,
@@ -13,7 +15,7 @@ body,
   background-color: #001529;
   color: #fff;
 }
-img{
+img {
   width: 100%;
 }
 .flex-center {
@@ -24,21 +26,43 @@ img{
 .text-center {
   text-align: center;
 }
-.anticon{
+.text-right {
+  text-align: right;
+}
+.high-bg-color {
+  background-color: $high-color;
+}
+.low-bg-color {
+  background-color: $low-color;
+  opacity: 0.12;
+}
+.anticon {
   font-size: 14px;
 }
-.anticon, .ant-btn{
+.anticon,
+.ant-btn {
   vertical-align: middle;
 }
-.big-icon, .big-icon .anticon{
+.big-icon,
+.big-icon .anticon {
   font-size: 20px;
 }
-.web-orange-color, .web-orange-color input{
+.web-orange-color,
+.web-orange-color input {
   color: $web-orange-color;
 }
-
+.ant-layout {
+  //width: 1260px;
+  margin: 0 auto;
+}
+.no-border .ant-table-tbody > tr > td {
+  border: none;
+}
+.ant-menu {
+  background-color: inherit;
+  font-size: 18px;
+}
 /* ------------ header ------------ */
-
 
 /* ------------ content ------------ */
 #slogan {
@@ -93,4 +117,65 @@ img{
 }
 .footer-trade {
   line-height: 30px;
+}
+
+/* ------- scroll bar ------ */
+::-webkit-scrollbar {
+  width: 6px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(144, 147, 153, 0.5);
+  cursor: pointer;
+  &:hover {
+    background: $low-color;
+  }
+}
+
+::-webkit-scrollbar-track {
+  // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+/* ------------ trade dish ------------ */
+.asks-section {
+  .progress-bar {
+    background-color: $low-color;
+    opacity: 0.12;
+  }
+  .color-num{
+    color: $low-color;
+  }
+}
+.bids-section {
+  .progress-bar {
+    background-color: $high-color;
+  }
+  .color-num{
+    color: $web-orange-color;
+  }
+}
+.web-orange-color{
+  color: $web-orange-color;
+}
+.low-color{
+  color: $low-color;
+}
+
+/* ------------ autoprefixer 测试 ------------ */
+.test{
+  animation: testchange 1s infinite;
+}
+@keyframes testchange{
+  from{
+    color: red
+  }
+  to{
+    color: yellow
+  }
 }

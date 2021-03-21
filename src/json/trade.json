@@ -2,22 +2,7 @@
     {
       "id": 1,
       "text": "现货",
-      "url": "/api/index/markets.json"
-    },
-    {
-      "id": 2,
-      "text": "ETF",
-      "url": "/api/index/markets/mar1.json"
-    },
-    {
-      "id": 3,
-      "text": "合约",
-      "url": "/api/index/markets/mar2.json"
-    },
-    {
-      "id": 4,
-      "text": "法币",
-      "url": "/api/index/markets/newCur.json"
+      "url": "wss://webws.gateio.live/v3/?v=112504"
     },
     {
       "id": 5,
@@ -27,12 +12,12 @@
     {
       "id": 6,
       "text": "新币",
-      "url": "/api/index/markets/newCur.json"
+      "url": "/api/index/markets/mar2.json"
     },
     {
       "id": 7,
       "text": "涨幅榜",
-      "url": "/api/index/markets/newCur.json"
+      "url": "/api/index/markets/mar1.json"
     },
     {
       "id": 8,

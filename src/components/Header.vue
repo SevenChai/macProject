@@ -69,7 +69,7 @@
 
 <script>
 import Logo from "@/assets/imgs/logo.png";
-import PopPanel from "@/components/index/PopPanel";
+import PopPanel from "@/components/home/PopPanel";
 export default {
   data() {
     return {

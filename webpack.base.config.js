@@ -49,6 +49,21 @@ module.exports = {
           },
           { loader: "css-loader" },
           {
+            loader: "postcss-loader",
+            options: { 
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      //选项
+                    }
+                  ]
+                ]
+              }
+             },
+          },
+          {
             loader: "sass-loader"
           }
         ]
